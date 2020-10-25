@@ -109,17 +109,49 @@ searchInput.value = '';
 // ---- Portfolio ----
 const porfolioTrigger = document.querySelector('.portfolio__trigger');
 const porfolioCatagoriesMenu = document.querySelector('.main__portfolio__menu');
+const porfolioContentMain = document.querySelector('.profile__content');
 const portfolioListItem = document.querySelectorAll('.portfolio__menu__items');
+const portfolioListItemMenu = document.querySelectorAll('.portfolio__menu__items__menu');
 const contentTabs = document.querySelectorAll('.portfolio__content__main');
 
 
 // tabs Func Call
 portfolioListItem.forEach(item =>{item.addEventListener('click',changeTabs)});
+portfolioListItemMenu.forEach(item =>{item.addEventListener('click',changeTabs)});
+portfolioListItemMenu.forEach(item =>{item.addEventListener('click',deacPorfolioLinks)});
 function deacContent(){
     contentTabs.forEach(item => {item.classList.remove('active')})
 }
 function deacMenu(){
     portfolioListItem.forEach(item => {item.classList.remove('active')})
+}
+function deacPorfolioLinks(e){
+    portfolioListItem.forEach(item => {item.classList.remove('active')})
+    console.log(e.target);
+    if(e.target.id=='tab-1'){
+        
+        portfolioListItem[0].classList.add('active');
+        e.target.href = "_portfolio.html";
+    }
+    if(e.target.id=='tab-2'){
+        
+        portfolioListItem[1].classList.add('active');
+        e.target.href = "_portfolio.html";
+        
+    }
+    if(e.target.id=='tab-3'){
+        
+        portfolioListItem[2].classList.add('active');
+        e.target.href = "_portfolio.html";
+        
+    }
+    if(e.target.id=='tab-4'){
+        
+        portfolioListItem[3].classList.add('active');
+        e.target.href = "_portfolio.html";
+        
+    }
+    e.preventDefault();
 }
 // tabs Func Define
 function changeTabs(e){
@@ -133,4 +165,5 @@ function changeTabs(e){
 porfolioTrigger.addEventListener('click',()=>{
     porfolioTrigger.classList.toggle('active');
     porfolioCatagoriesMenu.classList.toggle('active');
+    porfolioContentMain.classList.toggle('active');
 })
