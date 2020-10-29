@@ -14,6 +14,68 @@
     <script src="./js/lightslider.js"></script>
     <script src="./js/popper.min.js"></script>
     <script src="./js/bootstrap.min.js"></script>
+    <style>
+        body.active{
+            position: fixed;
+        }
+        .popupdetail{
+            width: 100%;
+            height: 100%;
+            position: fixed;
+            top: 0;
+            left: 0;
+           
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 20000000;
+            overflow: scroll;
+            background-color: rgba(0, 0, 0, .6);
+            opacity: 0;
+            visibility: hidden;
+            
+        }
+        .popupdetail.active{
+            opacity: 1;
+            visibility: visible;
+        }
+        .popup{
+            width: 70%;
+        }
+        .popup__img__main{
+            margin-top: 15rem;
+            max-height: 80vh;
+            overflow: scroll;
+            border: .7em solid var(--text-ligth);
+            border-radius: 8px;
+            cursor: pointer;
+
+        }
+        /* Hide scrollbar for Chrome, Safari and Opera */
+        .popup__img__main::-webkit-scrollbar {
+            display: none;
+        }
+
+        /* Hide scrollbar for IE, Edge and Firefox */
+        .popup__img__main {
+        -ms-overflow-style: none;  /* IE and Edge */
+        scrollbar-width: none;  /* Firefox */
+        }
+
+        .popup__img__main img{
+           max-width: 100%;
+        }
+        .popupDetal__close{
+            position: absolute;
+            right: 4rem;
+            top: 2rem;
+            cursor: pointer;
+        }
+        .popupDetal__close span i{
+            font-size: 2.5rem;
+            color: #fff;
+        }
+    </style>
 </head>
 <body>
     <!-- header start -->
@@ -27,7 +89,7 @@
                 </div>
                 <div class="header__item item--left">
                     <div class="logo">
-                        <a href="#"><img src="./img/logo.png" alt="cite logo"></a>
+                        <a href="index.html"><img src="./img/logo.png" alt="cite logo"></a>
                     </div>
                 </div>
                 <!-- menu start here -->
@@ -56,7 +118,7 @@
                                 <div class="sub-manu sub-manu mega-menu mega-menu-column-4">
                                     
                                     <div class="list-item">   
-                                        <a id="tab-1" href="_portfolio.html" class="tittle portfolio__menu__items__menu ">Logo</a> 
+                                        <a onclick="changeTabs2('tab-1')" href="_portfolio.html" class="tittle portfolio__menu__items__menu ">Logo</a> 
                                         <ul>
                                             <li>
                                                 <a href="#">Direct Income</a>
@@ -70,7 +132,7 @@
                                         </ul>
                                     </div>
                                     <div class="list-item">
-                                        <a id="tab-2" href="_portfolio.html" class="tittle portfolio__menu__items__menu ">Package</a>
+                                        <a onclick="changeTabs2('tab-2')" href="_portfolio.html" class="tittle portfolio__menu__items__menu">Package</a>
                                         <ul>
                                             <li>
                                                 <a href="#">Create Id</a>
@@ -85,7 +147,7 @@
                                         </ul>
                                     </div>
                                     <div class="list-item">
-                                        <a id="tab-3" href="_portfolio.html" class="tittle portfolio__menu__items__menu">Branding</a>
+                                        <a onclick="changeTabs2('tab-3')" href="_portfolio.html" class="tittle portfolio__menu__items__menu ">Branding</a>
                                         <ul>
                                             <li>
                                                 <a href="#">Fund Transfer</a>
@@ -99,7 +161,7 @@
                                         </ul>
                                     </div>
                                     <div class="list-item">
-                                        <a id="tab-4" href="_portfolio.html" class="tittle portfolio__menu__items__menu ">UI</a>
+                                        <a onclick="changeTabs2('tab-4')"  href="_portfolio.html" class="tittle portfolio__menu__items__menu">UI</a>
                                         <ul>
                                             <li>
                                                 <a href="#">Fund Transfer</a>
@@ -116,7 +178,7 @@
                                 </div>
                             </li>
                             <li>
-                                <a href="#">Services</a>
+                                <a href="_services.html">Services</a>
                             </li>
                             <li>
                                 <a href="#">About</a>
@@ -155,16 +217,16 @@
                 <li class="portfolio__trigger"><span>
                     <i class="fas fa-angle-double-right"></i>
                 </span></li>
-                <li id="tab-1" class="portfolio__menu__items active">
+                <li onclick="changeTabs('tab-1')" class="tab-1 portfolio__menu__items  active">
                     <span class="portfolio__catagorie__icon"><i class="fab fa-reddit"></i></span><span class="portfolio__catagorie">Logo</span>
                 </li>
-                <li id="tab-2" class="portfolio__menu__items">
+                <li onclick="changeTabs('tab-2')" class="tab-2 portfolio__menu__items ">
                     <span class="portfolio__catagorie__icon"><i class="fas fa-shipping-fast"></i></span><span class="portfolio__catagorie">Package</span>
                 </li>
-                <li id="tab-3" class="portfolio__menu__items">
+                <li onclick="changeTabs('tab-3')" class="portfolio__menu__items tab-3">
                     <span class="portfolio__catagorie__icon"><i class="fas fa-snowboarding"></i></span><span class="portfolio__catagorie">Branding</span>
                 </li>
-                <li id="tab-4" class="portfolio__menu__items">
+                <li onclick="changeTabs('tab-4')" class="portfolio__menu__items tab-4">
                     <span class="portfolio__catagorie__icon"><i class="fab fa-uikit"></i></span><span class="portfolio__catagorie">UI</span>
                 </li>
             </ul>
@@ -182,7 +244,7 @@
                                             <div>
                                                <h5 class="h5 portfolio__card__slides__heading">Residual income 1</h5>
                                                <p class="portfolio__card__slides__text">Lorem ipsum dolor sit amet consectetur adipisicing elit. Dolores, delectus.</p>
-                                               <a href="#" class="btn btn-sm btn-outline-light portfolio__card__slides__btn">Read More</a>
+                                               <a href="#" class="btn btn-sm btn-outline-light portfolio__card__slides__btn" onclick="popupTogglerFunc('./img/c1-pres-bg.jpg')" data="">Read More</a>
                                             </div>
                                         </div>
                                     </div>
@@ -992,10 +1054,71 @@
 		</div>
 
 	</div>
-     <!-- Footer -->
+    <!-- Footer -->
+    <!-- Popup Detail Box -->
+    <div class="popupdetail">
+        <div class="popupDetal__close">
+            <span onclick="popupTogglerFunc()">
+                <i class="fas fa-window-close"></i>
+            </span>
+        </div>
+        <div class="popup">
+            <div class="popup__img__main">
+                <img src="" alt="Pic Deatil Img">
+            </div>
+            <div class="popup__socail">
+                <div class="main__services__social mt-5  mb-5 d-flex justify-content-center align-items-center">
+                    <div class="wrapper mt-5">	
+                        <div class="main__services__social__button" id="a">
+                            <div class="icon">
+                                <img id="facebook" src="./img/facebook.png">
+                                <img id="facebookwhite" src="./img/facebookwhite.png">
+                            </div>
+                            <div>
+                                <a href="#">Contact </a>
+                            </div>
+                        </div>
+                        <div class="main__services__social__button" id="b">
+                            <div class="icon">
+                                <img id="fiverr" src="./img/fiverr.png">
+                                <img id="fiverrwhite" src="./img/fiverrwhite.png">
+                            </div>
+                            <div>
+                                <a href="#">Order Now</a>
+                            </div>
+                            
+                        </div>
+                        <div class="main__services__social__button" id="c">
+                            <div class="icon">
+                                <img id="whatsapp" src="./img/whatsapp.png">
+                                <img id="whatsappwhite" src="./img/whatsappwhite.png">
+                            </div>
+                            <div>
+                                <a href="#">Contact</a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Popup Detail Box -->
+    
     <!-- JS And JqueryUpdated -->
     <script type="text/javascript" src="./js/script.js"></script>
     <script type="text/javascript" src="./js/jqueryup.js"></script>
-    
+    <script>
+        function popupTogglerFunc(path){
+            const bodyScroll = document.querySelector('body');
+            const mainPopupBox = document.querySelector('.popupdetail');
+            const img = document.querySelector('.popup__img__main img');
+            // const imgPath = document.querySelector('.');
+            // img.src = this.getAttribute('data');
+            img.src = path;
+            bodyScroll.classList.toggle('active');
+            mainPopupBox.classList.toggle('active');
+
+        }
+    </script>
 </body>
 </html>
