@@ -177,6 +177,7 @@ body{
     }
     .portfolio__card__slides__btn{
         font-size: .43rem !important;
+        
     }
     /* Services Sec */
     .services__card {
@@ -286,15 +287,6 @@ body{
         padding: .6em .7em;
         
     }
-    .portfolio__card__slides__heading{font-size: .8rem !important;
-
-    }
-    .portfolio__card__slides__text{font-size: .4rem !important;
-
-    }
-    .portfolio__card__slides__btn{font-size: .3rem !important;
-
-    }
     /* PopUpBox Detail Box */
     .popup__img__main{
         margin-top: 0rem !important;
@@ -401,15 +393,6 @@ body{
     .portfolio__card__slides {
         height: 9rem !important;
     }
-    .portfolio__card__slides__heading{font-size: .5rem !important;
-
-    }
-    .portfolio__card__slides__text{font-size: .3rem !important;
-
-    }
-    .portfolio__card__slides__btn{font-size: .2rem !important;
-
-    }
      /* PopUpBox Detail Box */
      .popup__img__main{
         margin-top: 0rem !important;
@@ -505,10 +488,6 @@ body{
     .profile__card__sub__title {
         font-size: .5rem !important;
     }
-    .profile__card__text {
-        font-size: .4rem !important;
-        margin-bottom: .6rem !important;
-    }
     .stars i {
         font-size: .35rem !important;
     }
@@ -520,14 +499,10 @@ body{
         padding-top: .8em;
     }
     .portfolio__card__slides__heading {
-        font-size: .3rem !important;
-    }
-    .portfolio__card__slides__text {
-        font-size: .2rem !important;
+        font-size: .4rem !important;
     }
     .portfolio__card__slides__btn {
-        font-size: .2rem !important;
-        padding: .2rem .3rem !important;
+        font-size: .3rem !important;
     }
      /* PopUpBox Detail Box */
     
@@ -1168,14 +1143,11 @@ a{
  */
 .slidees{
     position: relative; 
-    background-color: rgba(0, 34, 83, 0.8) !important;
     color: var(--text-ligther-more); 
     z-index: 1;
     height: 500px;
 }
 .slidees img{
-    opacity: .7;
-    object-fit: cover;
     width: 100%;
     height: 100%;
 }
@@ -1198,7 +1170,7 @@ a{
 }
 .card__slides__main{
     width: 280px;
-    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 0 4px rgba(0,0,0,0.6),0 0 30px rgba(0,0,0,0.2);
     border-radius: 10px;
     overflow: hidden;
     margin: 25px;
@@ -1251,6 +1223,9 @@ a{
 }
 .card__slider__content p{
     line-height: 1;
+}
+.card__slider__content .home_link_btn{
+    padding: .3em 2em;
 }
 
 /* 
@@ -1456,11 +1431,14 @@ a{
     transform: scale(1.5);
     color: var(--text-ligth);
 }
+.portfolio__card__slides__btn{
+    padding: .3em 2em !important;
+}
 
 /* Cards */
 .portfolio__card__slides__main{
     max-width: 100%;
-    box-shadow: 2px 2px 30px rgba(0,0,0,0.2);
+    box-shadow: 0 0 1px rgba(0,0,0,.7),0 0 10px rgba(0,0,0,0.5);
     border-radius: 10px;
     overflow: hidden;
     margin: 1.2rem;
@@ -1542,9 +1520,6 @@ a{
     }
 }
 /* PopUpBox Detail Box */
-body.active{
-    position: fixed;
-}
 .popupdetail{
     width: 100%;
     height: 100%;
@@ -1826,10 +1801,13 @@ Services Sec
     border-color: #4267b2;
 }
 .wrapper #b:hover{
-    border-color: #01AB2A;
+    border-color:#f9835b;
 }
 .wrapper #c:hover{
-    border-color: #25d365;
+    border-color: #053eff;
+}
+.wrapper #d:hover{
+    border-color: #F56040;
 }
 .wrapper .main__services__social__button .icon{
     display: inline-block;
@@ -1843,60 +1821,70 @@ Services Sec
 
 }
 .wrapper .main__services__social__button:nth-child(1):hover .icon{
-    background:#4267b2;
+    background:#F56040;
 }
 .wrapper .main__services__social__button:nth-child(2):hover .icon{
-    background:#01AB2A;
+    background:#4267b2;
 }
 .wrapper .main__services__social__button:nth-child(3):hover .icon{
-    background:#25d366;
+    background:#f9835b;
 }
-
-.wrapper .main__services__social__button .icon #fiverrwhite, #whatsappwhite, #facebookwhite{
+.wrapper .main__services__social__button:nth-child(4):hover .icon{
+    background:#053eff;
+}
+/*  */
+.wrapper .main__services__social__button .icon #dribblewhite, #behancewhite, #facebookwhite,#instawhite{
     display: none;
 }
+.wrapper .main__services__social__button .icon #insta,
+.wrapper .main__services__social__button .icon #instawhite,
 .wrapper .main__services__social__button .icon #facebook,
 .wrapper .main__services__social__button .icon #facebookwhite,
-.wrapper .main__services__social__button .icon #whatsapp,
-.wrapper .main__services__social__button .icon #whatsappwhite,
-.wrapper .main__services__social__button .icon #fiverr,
-.wrapper .main__services__social__button .icon #fiverrwhite{
+.wrapper .main__services__social__button .icon #behance,
+.wrapper .main__services__social__button .icon #behancewhite,
+.wrapper .main__services__social__button .icon #dribble,
+.wrapper .main__services__social__button .icon #dribblewhite{
     position: absolute;
     top: 50%;
     left: 50%;
     transform: translate(-50%, -50%);
 }
-.wrapper .main__services__social__button .icon #facebook{
-    width: 10px;
-}
-.wrapper .main__services__social__button .icon #whatsapp{
-    width: 24px;
-}
-.wrapper .main__services__social__button .icon #fiverr{
-    width:1rem;
-}
-.wrapper .main__services__social__button:hover .icon #facebookwhite{
-    display: inline-block;
-    width: 10px;
-}
-.wrapper .main__services__social__button:hover .icon #fiverrwhite{
-    display: inline-block;
-    width: 17px;
-}
-.wrapper .main__services__social__button:hover .icon #whatsappwhite{
-    display: inline-block;
-    width: 24px;
+.wrapper .main__services__social__button .icon #facebook,
+.wrapper .main__services__social__button .icon #facebookwhite,
+.wrapper .main__services__social__button .icon #insta,
+.wrapper .main__services__social__button .icon #instawhite,
+.wrapper .main__services__social__button .icon #dribble,
+.wrapper .main__services__social__button .icon #dribblewhite,
+.wrapper .main__services__social__button .icon #behance,
+.wrapper .main__services__social__button .icon #behancewhite{
+    width: 1.35rem;
 }
 
-.wrapper .main__services__social__button:hover .icon #fiverr{
-    display: none;
+.wrapper .main__services__social__button:hover .icon #facebookwhite{
+    display: inline-block;
 }
 .wrapper .main__services__social__button:hover .icon #facebook{
     display: none;
 }
-.wrapper .main__services__social__button:hover .icon #whatsapp{
+.wrapper .main__services__social__button:hover .icon #dribblewhite{
+    display: inline-block;
+}
+.wrapper .main__services__social__button:hover .icon #dribble{
     display: none;
 }
+.wrapper .main__services__social__button:hover .icon #instawhite{
+    display: inline-block;
+}
+.wrapper .main__services__social__button:hover .icon #insta{
+    display: none;
+}
+.wrapper .main__services__social__button:hover .icon #behancewhite{
+    display: inline-block;
+}
+.wrapper .main__services__social__button:hover .icon #behance{
+    display: none;
+}
+/*  */
 .wrapper .main__services__social__button a{
     width: max-content;
     font-size: 1.4rem;
@@ -1910,50 +1898,47 @@ Services Sec
     text-decoration: underline;
 }
 .wrapper .main__services__social__button:nth-child(1) a{
-    color:#4267b2;
+    color:#F56040;
 }
 .wrapper .main__services__social__button:nth-child(2) a{
-    color:#01AB2A;
+    color: #4267b2;
 }
 .wrapper .main__services__social__button:nth-child(3) a{
-    color:#25d365;
+    color:#f9835b;
+}
+.wrapper .main__services__social__button:nth-child(4) a{
+    color:#053eff;
+    
 }
 @media (max-width:500px){
     .wrapper .main__services__social__button:hover{
     width: 110px;
-}
-    .wrapper .main__services__social__button .icon{
-    height: 30px;
-    width: 30px;
-    line-height:30px; 
-}
-    .wrapper .main__services__social__button{
-    height:30px;
-    width: 30px;
-    margin: 0 .6rem;
-}
-    .wrapper .main__services__social__button a{
-    font-size: .8rem;
-    left: 35px;
-}
-.wrapper .main__services__social__button .icon #facebook{
-    width: 7px;
-}
-.wrapper .main__services__social__button .icon #whatsapp{
-    width: 16px;
-}
-.wrapper .main__services__social__button .icon #fiverr{
-    width: .7rem;
-}
-.wrapper .main__services__social__button:hover .icon #facebookwhite{
-    width: 7px;
-}
-.wrapper .main__services__social__button:hover .icon #fiverrwhite{
-    width: 11px;
-}
-.wrapper .main__services__social__button:hover .icon #whatsappwhite{
-    width: 16px;
-}
+    }
+        .wrapper .main__services__social__button .icon{
+        height: 30px;
+        width: 30px;
+        line-height:30px; 
+    }
+        .wrapper .main__services__social__button{
+        height:30px;
+        width: 30px;
+        margin: 0 .6rem;
+    }
+        .wrapper .main__services__social__button a{
+        font-size: .8rem;
+        left: 35px;
+    }
+    .wrapper .main__services__social__button .icon #facebook,
+    .wrapper .main__services__social__button .icon #facebookwhite,
+    .wrapper .main__services__social__button .icon #insta,
+    .wrapper .main__services__social__button .icon #instawhite,
+    .wrapper .main__services__social__button .icon #dribble,
+    .wrapper .main__services__social__button .icon #dribblewhite,
+    .wrapper .main__services__social__button .icon #behance,
+    .wrapper .main__services__social__button .icon #behancewhite{
+        width: .9rem;
+    }
+
 }
 /* BTN */
 .main__more__logos{

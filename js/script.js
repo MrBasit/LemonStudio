@@ -139,10 +139,8 @@ porfolioTrigger.addEventListener('click',()=>{
 
 // Descrtiption Of Images
 function popupTogglerFunc(path){
-    const bodyScroll = document.querySelector('body');
     const mainPopupBox = document.querySelector('.popupdetail');
     const img = document.querySelector('.popup__img__main img');
     img.src = path;
-    bodyScroll.classList.toggle('active');
     mainPopupBox.classList.toggle('active');
 }
