@@ -24,6 +24,7 @@ body{
     --menu-bg: #ff3838;
     --menu-border-color: #b20000;
     --menu-font-color: #fff;
+    --star-rating: #FDCC0D;
     --menu-font-size: 24px;
     --menu-shadow: 0 0 5px .2px #222;
     --font-family-raleway : 'Raleway', sans-serif;
@@ -80,16 +81,8 @@ body{
         padding: 1em 2em !important;
     }
     
-       
-    .profile__card__img {
-        width: 8.5rem !important ;
-        height: 8.5rem !important ;
-    }
     .profile__card__title {
         font-size: 1rem !important ;
-    }
-    .profile__card__sub__title {
-        font-size: .9rem !important ;
     }
     .profile__card__text {
         font-size: .7rem !important ;
@@ -186,6 +179,19 @@ body{
     .services__card__img {
         height: 280px !important;
     }
+    .services__card__img__text{
+        font-size: .65rem !important;
+    }
+    .services__card__img__platform{
+        font-size: 1rem !important;
+    }
+    .services__card__rating ul{
+        margin-top: 0rem !important;
+        margin-bottom: 0 !important;
+    }
+    .services__rating__stars i{
+        font-size: .6rem !important;
+    }
     
 }
 
@@ -236,15 +242,8 @@ body{
         width: 20rem !important;
         height: 280px !important;
     }
-    .profile__card__img {
-        width: 7rem !important;
-        height: 7rem !important;  
-    }
     .profile__card__title {
         font-size: .9rem !important;
-    }
-    .profile__card__sub__title {
-        font-size: .8rem !important;
     }
     .profile__card__text{
         font-size: .7rem !important;
@@ -357,15 +356,8 @@ body{
         height: 230px !important ;
         padding: 3em 2em !important;
     }
-    .profile__card__img {
-        width: 5.5rem !important ;
-        height: 5.5rem !important ;
-    }
     .profile__card__title {
         font-size: .7rem !important ;
-    }
-    .profile__card__sub__title {
-        font-size: .6rem !important ;
     }
     .profile__card__text {
         font-size: .5rem !important ;
@@ -419,9 +411,6 @@ body{
     }
     .main__more__logos .main__more__logos__link {
         font-size: .9rem !important;
-    }
-    .popup .main__services__social {
-        bottom: 0% !important;
     }
     /* About Us Sec */
     .portfolio__main1 > p{
@@ -478,15 +467,8 @@ body{
         height: 190px !important;
         padding: 3em 2em !important;
     }
-    .profile__card__img {
-        width: 4.5rem !important;
-        height: 4.5rem !important;
-    }
     .profile__card__title {
         font-size: .6rem !important;
-    }
-    .profile__card__sub__title {
-        font-size: .5rem !important;
     }
     .stars i {
         font-size: .35rem !important;
@@ -1246,7 +1228,7 @@ a{
 }
 .profile__slidees{
     position: relative;
-    height: 400px;
+    height: 365px;
 }
 .profile__slider__content{
     position: absolute;
@@ -1254,10 +1236,10 @@ a{
     top: 50%;
     transform: translate(-50%, -50%);
     border: 2px solid #eeeeee;
-    padding: 3em 2em;
-    height: 400px;
-    -webkit-box-shadow: 0 4px 8px 0 rgba(0,0,0,.12), 0 2px 4px 0 rgba(0,0,0,.08);
-    box-shadow: 0 4px 8px 0 rgba(0,0,0,.12), 0 2px 4px 0 rgba(0,0,0,.08);
+    padding: 3em 3em;
+    height: 350px;
+    -webkit-box-shadow: 0 0 1px 0 rgba(0,0,0,.1), 0 5px 20px 2px rgba(0,0,0,.08);
+    box-shadow: 0 0 1px 0 rgba(0,0,0,.1), 0 5px 20px 2px rgba(0,0,0,.08);
     transition: box-shadow .5s linear;
 }
 .profile__slider__content:hover{
@@ -1265,17 +1247,15 @@ a{
     box-shadow: 0 15px 30px 0 rgba(0,0,0,.11), 0 5px 15px 0 rgba(0,0,0,.08);
 }
 .profile__card__img{
-    width: 10rem;
-    height: 10rem;
-    clip-path: circle(30% at 30% 50%);
+    max-width: 100%;
+    border-radius: 50%;
     object-fit: cover;
 }
 .profile__card__title{
-    font-size: 1.4rem;
+    font-size: 1.8rem;
+    padding-bottom: .5em;
 }
-.profile__card__sub__title{
-    font-size: 1rem;
-}
+
 .profile__card__text{
     font-size: .9rem;
 }
@@ -1286,11 +1266,11 @@ a{
     padding: 1em 0;
 }
 .stars i{
-    font-size: .6rem;
-    color: var(--text-ligth) !important;
+    font-size: 1rem;
+    color: var(--star-rating) !important;
 }
 .stars + .stars{
-    margin-left: .7rem;
+    margin-left: .4rem;
 }
 
 /* 
@@ -1602,7 +1582,7 @@ Services Sec
 ==================
 */
 .serevices__main__title{
-    font-size: 3rem !important;
+    font-size: 4rem !important;
 }
 
 .serevices__cards_main{
@@ -1649,7 +1629,6 @@ Services Sec
 .services__card__img img{
     height: 100%;
     width: 100%;
-    object-fit: cover;
     transition: all .3s linear;
 }
 
@@ -1660,12 +1639,11 @@ Services Sec
     transform: translate(-50%, -50%);
     width: 100%;
     height: 100%;
-    background-color: rgba(0, 0, 0, 0.4);
+    background-color: rgba(0, 0, 0, 0.7);
     color: var(--text-ligther-more);
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
     padding: 0 1.5em;
     text-align: center;
 }
@@ -1687,7 +1665,6 @@ Services Sec
 }
 .services__card__content{
     width: 100%;
-    padding: 10px 20px;
 }
 .services__card__content{
     height: 5rem;
@@ -1697,29 +1674,49 @@ Services Sec
     visibility: hidden;
     opacity: 0;
     transition: opacity .3s linear .3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     
 }
 .services__card:hover .services__card__content{
     visibility: visible;
     opacity: 1;
 }
-
-
-.services__card__content__title{
+.dots{
+    font-size: .9rem;
+    line-height: .6;
+    color: var(--text-white);
     margin-bottom: 0;
-    margin-top: .5rem;
+}
+.quote_right{
+    margin-left: 1rem;
+}
+.services__card__img__text{
+    line-height: 1.15;
+    font-size: .95rem;
+    padding: 0 1em;
+}
+.services__card__img__platform{
+    margin-top: 1rem;
+}
+.services__card__content__title{
+    margin-bottom: .2em;
 }
 .services__card__rating ul{
     display: flex;
     align-items: center;
+    justify-content: center;
+    margin-bottom: 0;
     
 }
 .services__rating__stars i{
-    font-size: .6rem;
+    font-size: .9rem;
     color: var(--text-black) !important;
 }
 .services__rating__stars + .services__rating__stars{
-    margin-left: .4rem;
+    margin-left: .3rem;
 }
 
 /* Riboon */
